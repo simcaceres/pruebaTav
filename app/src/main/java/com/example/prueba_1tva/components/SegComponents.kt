@@ -19,10 +19,10 @@ fun TitleView(name: String){
 }
 
 @Composable
-fun Space(with: Int, height: Int){
+fun Space(width: Int, height: Int){
     Spacer(
         modifier = Modifier
-            .width(with.dp)
+            .width(width.dp)
             .height(height.dp)
     )
 }
