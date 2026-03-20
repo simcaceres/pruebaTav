@@ -1,12 +1,4 @@
 FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
-COPY . .
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-
-
-
-FROM nginx:alpine
 
 # Etiquetas de información
 LABEL maintainer="sim.caceres@duocuc.cl"
