@@ -1,18 +1,10 @@
-FROM nginx:alpine
+FROM python:3.9-slim
 
-# Etiquetas de información
-LABEL maintainer="sim.caceres@duocuc.cl"
-LABEL version="1.0"
-LABEL description="Mi primer entorno operativo en Render"
+WORKDIR /app
 
-# Directorio donde Nginx busca los archivos para mostrar
-WORKDIR /usr/share/nginx/html
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt 
 
-# Copia tu index.html al contenedor
 COPY . .
 
-# Expone el puerto 80
-EXPOSE 80
-
-# Ejecuta Nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "python", "archivoia.py" ]
